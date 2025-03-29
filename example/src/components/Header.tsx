@@ -1,6 +1,6 @@
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import tippy from 'tippy.js';
-import { CloudArrowUpIcon, TableCellsIcon } from '@heroicons/react/24/outline';
+import { TableCellsIcon } from '@heroicons/react/24/outline';
 import { GitHubIcon } from './Icons';
 import rainbow from '../assets/images/rainbow.jpg';
 

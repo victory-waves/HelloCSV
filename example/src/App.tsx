@@ -6,7 +6,6 @@ import { EXAMPLE_CODE } from './constants';
 import {
   EmployeeSheetImporter,
   EmployeeImporter,
-  WideImporter,
 } from './components/importers';
 
 const App = () => {
