@@ -12,7 +12,7 @@ const baseClasses = cva('overflow-hidden rounded-md border border-gray-200', {
   variants: {
     variant: {
       default: 'bg-white',
-      muted: 'bg-csv-importer-muted',
+      muted: 'bg-hello-csv-muted',
     },
     withPadding: {
       true: 'px-4 py-5 sm:p-6',

@@ -22,7 +22,7 @@ const buttonStyles = cva(
       },
       variant: {
         default: '',
-        danger: 'text-csv-importer-danger',
+        danger: 'text-hello-csv-danger',
       },
       location: {
         left: 'rounded-l-md',
@@ -39,7 +39,7 @@ const buttonStyles = cva(
       {
         active: true,
         variant: 'danger',
-        className: 'bg-csv-importer-danger text-white',
+        className: 'bg-hello-csv-danger text-white',
       },
       {
         active: false,
@@ -49,7 +49,7 @@ const buttonStyles = cva(
       {
         active: false,
         variant: 'danger',
-        className: 'text-csv-importer-danger',
+        className: 'text-hello-csv-danger',
       },
     ],
   }

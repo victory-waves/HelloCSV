@@ -12,7 +12,7 @@ export const ThemeSetter: React.FC<ThemeSetterProps> = ({
 }) => {
   useEffect(() => {
     if (theme) {
-      document.documentElement.setAttribute('csv-importer-data-theme', theme);
+      document.documentElement.setAttribute('hello-csv-data-theme', theme);
     }
   }, [theme]);
 

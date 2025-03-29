@@ -55,9 +55,9 @@ export default function SheetDataEditorCell({
   const readOnly = isColumnReadOnly(columnDefinition);
 
   const cellBackgroundColor = errorsText
-    ? 'bg-csv-importer-danger-extra-light'
+    ? 'bg-hello-csv-danger-extra-light'
     : readOnly
-      ? 'bg-csv-importer-muted'
+      ? 'bg-hello-csv-muted'
       : '';
 
   if (!editMode) {

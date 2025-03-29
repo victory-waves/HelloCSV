@@ -22,14 +22,14 @@ interface Props {
 const baseClasses = cva('text-center inline-block font-semibold', {
   variants: {
     variant: {
-      primary: 'shadow-xs bg-csv-importer-primary text-white',
+      primary: 'shadow-xs bg-hello-csv-primary text-white',
       secondary:
-        'bg-white text-csv-importer-primary ring-1 shadow-xs ring-bg-csv-importer-primary ring-inset',
+        'bg-white text-hello-csv-primary ring-1 shadow-xs ring-bg-hello-csv-primary ring-inset',
       tertiary:
-        'bg-white text-gray-900 ring-1 shadow-xs ring-csv-importer-tertiary ring-inset',
-      success: 'shadow-xs bg-csv-importer-success text-white',
-      danger: 'shadow-xs bg-csv-importer-danger text-white',
-      warning: 'shadow-xs bg-csv-importer-warning text-white',
+        'bg-white text-gray-900 ring-1 shadow-xs ring-hello-csv-tertiary ring-inset',
+      success: 'shadow-xs bg-hello-csv-success text-white',
+      danger: 'shadow-xs bg-hello-csv-danger text-white',
+      warning: 'shadow-xs bg-hello-csv-warning text-white',
     },
     size: {
       xs: 'px-2 py-1 rounded-sm text-xs',
@@ -48,30 +48,30 @@ const baseClasses = cva('text-center inline-block font-semibold', {
       variant: 'primary',
       disabled: false,
       className:
-        'hover:bg-csv-importer-primary-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-csv-importer-primary',
+        'hover:bg-hello-csv-primary-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hello-csv-primary',
     },
     {
       variant: 'secondary',
       disabled: false,
       className:
-        'hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-csv-importer-secondary',
+        'hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hello-csv-secondary',
     },
     {
       variant: 'tertiary',
       disabled: false,
-      className: 'hover:bg-csv-importer-tertiary-light',
+      className: 'hover:bg-hello-csv-tertiary-light',
     },
     {
       variant: 'success',
       disabled: false,
       className:
-        'hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-csv-importer-success',
+        'hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hello-csv-success',
     },
     {
       variant: 'danger',
       disabled: false,
       className:
-        'hover:bg-csv-importer-danger-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-csv-importer-danger',
+        'hover:bg-hello-csv-danger-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hello-csv-danger',
     },
     {
       variant: 'warning',

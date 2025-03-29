@@ -290,20 +290,20 @@ You can further customize theme styles by overriding the following CSS variables
 
 ```css
 :root {
-  --csv-importer-color-primary: #007bff;
-  --csv-importer-color-primary-light: #66b3ff;
-  --csv-importer-color-primary-extra-light: #cce7ff;
-  --csv-importer-color-secondary: #6c757d;
-  --csv-importer-color-tertiary: #17a2b8;
-  --csv-importer-color-tertiary-light: #5bc0de;
-  --csv-importer-color-success: #28a745;
-  --csv-importer-color-danger: #dc3545;
-  --csv-importer-color-danger-light: #f5c6cb;
-  --csv-importer-color-danger-extra-light: #f8d7da;
-  --csv-importer-color-warning: #ffc107;
-  --csv-importer-color-info: #17a2b8;
-  --csv-importer-color-muted: #f9fafb;
-  --csv-importer-color-muted-light: #f3f4f6;
+  --hello-csv-color-primary: #007bff;
+  --hello-csv-color-primary-light: #66b3ff;
+  --hello-csv-color-primary-extra-light: #cce7ff;
+  --hello-csv-color-secondary: #6c757d;
+  --hello-csv-color-tertiary: #17a2b8;
+  --hello-csv-color-tertiary-light: #5bc0de;
+  --hello-csv-color-success: #28a745;
+  --hello-csv-color-danger: #dc3545;
+  --hello-csv-color-danger-light: #f5c6cb;
+  --hello-csv-color-danger-extra-light: #f8d7da;
+  --hello-csv-color-warning: #ffc107;
+  --hello-csv-color-info: #17a2b8;
+  --hello-csv-color-muted: #f9fafb;
+  --hello-csv-color-muted-light: #f3f4f6;
 }
 ```
 

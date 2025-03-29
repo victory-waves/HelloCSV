@@ -51,7 +51,7 @@ export default function FileUploader({
     <Card variant="muted" withPadding={false} className="h-full">
       <div
         className={`flex h-full flex-col p-5 transition-colors ${
-          isDragging ? 'bg-csv-importer-muted-light' : 'bg-csv-importer-muted'
+          isDragging ? 'bg-hello-csv-muted-light' : 'bg-hello-csv-muted'
         }`}
         onClick={() => fileInputRef.current?.click()}
         onDragOver={(e) => {
@@ -63,7 +63,7 @@ export default function FileUploader({
         onDrop={(e) => handleDrop(e)}
       >
         <div className="flex flex-1 flex-col items-center justify-center">
-          <CloudArrowUpIcon className="text-csv-importer-primary h-12 w-12" />
+          <CloudArrowUpIcon className="text-hello-csv-primary h-12 w-12" />
           <p className="mt-3">{t('uploader.dragAndDrop')}</p>
           <div className="mt-3 text-sm text-gray-500">
             {tHtml('uploader.maxFileSizeInBytes', {
@@ -78,7 +78,7 @@ export default function FileUploader({
             <div className="mt-3 text-sm">
               <p
                 onClick={onEnterDataManually}
-                className="text-csv-importer-primary hover:text-csv-importer-primary cursor-pointer decoration-2 opacity-90 hover:underline focus:underline focus:outline-none"
+                className="text-hello-csv-primary hover:text-hello-csv-primary cursor-pointer decoration-2 opacity-90 hover:underline focus:underline focus:outline-none"
               >
                 {t('uploader.enterManually')}
               </p>

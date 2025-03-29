@@ -14,7 +14,7 @@ const tooltipBaseClasses = cva(
   {
     variants: {
       variant: {
-        error: 'outline-csv-importer-danger',
+        error: 'outline-hello-csv-danger',
         info: 'outline-gray-500',
       },
     },
@@ -28,7 +28,7 @@ const tooltipWrapperBaseClasses = cva('group relative h-full w-full', {
   variants: {
     variant: {
       error:
-        'focus-within:outline-csv-importer-danger hover:outline-csv-importer-danger',
+        'focus-within:outline-hello-csv-danger hover:outline-hello-csv-danger',
       info: 'focus-within:outline-gray-500 hover:outline-gray-500',
     },
     withOutline: {

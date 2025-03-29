@@ -12,7 +12,7 @@ export default forwardRef<HTMLDivElement, Props>(function Root(
 ) {
   useEffect(() => {
     /// We need to add a class to the portal root to style the dropdown
-    /// that is because we have our css scoped to componenents within element with class csv-importer
+    /// that is because we have our css scoped to componenents within element with class hello-csv
     ///
     /// HeadlesUI doesn't seem to provide an API to manipulate Portal root, so we do it this hacky way
     const observer = new MutationObserver((mutationsList) => {

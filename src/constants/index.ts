@@ -10,4 +10,4 @@ export const MAX_CHARACTERS_IN_MAPPING_EXAMPLES = 500;
 
 export const HEALDESS_UI_PORTAL_ROOT_ID = 'headlessui-portal-root';
 
-export const ROOT_CLASS = 'csv-importer';
+export const ROOT_CLASS = 'hello-csv';

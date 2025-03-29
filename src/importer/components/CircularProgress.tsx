@@ -25,7 +25,7 @@ export default function CircularProgress({ progress, pending }: Props) {
     return (
       <div className="flex justify-center">
         <div
-          className={`border-csv-importer-success h-22 w-22 rounded-full border-10 ${
+          className={`border-hello-csv-success h-22 w-22 rounded-full border-10 ${
             pending && `animate-spin border-t-transparent`
           }`}
         ></div>
@@ -52,7 +52,7 @@ export default function CircularProgress({ progress, pending }: Props) {
         strokeWidth="10"
         strokeDasharray={circumference}
         strokeDashoffset={offset}
-        className="stroke-csv-importer-success transition-[stroke-dashoffset] duration-500"
+        className="stroke-hello-csv-success transition-[stroke-dashoffset] duration-500"
       />
     </svg>
   );
