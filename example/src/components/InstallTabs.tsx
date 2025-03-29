@@ -1,4 +1,3 @@
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { useState } from 'preact/hooks';
 
 function classNames(...classes: string[]) {
