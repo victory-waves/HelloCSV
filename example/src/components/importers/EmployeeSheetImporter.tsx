@@ -105,7 +105,6 @@ export default function StudentsImporter() {
     onProgress(100);
     console.log(data);
     setReady(true);
-    alert("Check the console for the output!");
   };
 
   return (

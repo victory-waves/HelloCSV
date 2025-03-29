@@ -86,11 +86,8 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="mx-auto mt-8 flex h-[300px] w-[300px] cursor-pointer flex-col items-center justify-center rounded-[2rem] bg-white p-4 text-center text-black shadow-2xl transition-all duration-300 hover:bg-gray-100 lg:mt-0">
-          {/* TODO:Embed a video here once we have one but until then, once we get the modal working, we will have this open the importer in a modal */}
-          <CloudArrowUpIcon className="size-10 text-gray-500" />
-          <h3 className="mt-3 text-3xl font-bold">Try it out!</h3>
-          <div className="text-md mt-3">Import a CSV file in seconds</div>
+        <div className="mx-auto mt-8 flex cursor-pointer flex-col items-center justify-center rounded-[2rem] lg:mt-0">
+          <video className="lg:w-[600px] w-full rounded-lg" src="/demo.mp4" autoPlay muted loop />
         </div>
       </div>
     </div>

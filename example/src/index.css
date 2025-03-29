@@ -29,11 +29,11 @@ footer {
 }
 
 .content {
-	@apply py-8 lg:py-16 max-w-6xl mx-auto px-4 text-lg space-y-2;
+	@apply py-10 lg:py-24 max-w-6xl mx-auto px-4 text-lg space-y-2;
 }
 
 .documentation-container {
-	@apply m-auto px-8 text-gray-800 md:w-[650px] mb-8;
+	@apply m-auto px-8 text-gray-800 md:w-[650px] mb-12;
 }
 
 @media (min-width: 1024px) {

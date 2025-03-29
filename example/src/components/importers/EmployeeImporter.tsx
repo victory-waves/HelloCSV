@@ -17,7 +17,6 @@ export default function EmployeeImporter() {
     onProgress(100);
     console.log(data);
     setReady(true);
-    alert("Check the console for the output!");
   };
   return (
     <div className="content">
