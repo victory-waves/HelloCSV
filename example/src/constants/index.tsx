@@ -26,6 +26,6 @@ import 'hello-csv/peer/index.css'
       ],
     }
   ]}
-  onComplete={onComplete}
+  onComplete={(data) => console.log(data)}
 />
 `;

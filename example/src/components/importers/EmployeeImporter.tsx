@@ -20,13 +20,27 @@ export default function EmployeeImporter() {
   };
   return (
     <div className="content">
-      <h1>
-        Want to see a demo? Try uploading{' '}
-        <a className="text-blue-500 hover:text-blue-600" href={example1}>
-          this file
-        </a>
-        .
-      </h1>
+      <a id="basic-example"></a>
+      <div className="documentation-container">
+        <h3 className="font-title">
+          Basic Example
+        </h3>
+        <div className="container leading-8">
+          <p>
+            Imagine we are trying to set up an uploader that uploads a CSV of <code className="bg-gray-200 p-1 rounded-md">employees</code>.
+          </p>
+          <p>
+            HelloCSV makes this a breeze.
+          </p>
+        </div>
+        <p className="mt-8 text-lg underline decoration-blue-500 underline-offset-6 decoration-4">
+          Try uploading{' '}
+          <a className="text-blue-500 hover:text-blue-600" href={example1}>
+            this file
+          </a>
+          .
+        </p>
+      </div>
       <div className="mt-4 flex max-h-[800px] rounded-lg border border-gray-200 bg-white p-6 px-8">
         <Importer
           maxFileSizeInBytes={10 * 1024 * 1024} // 10MB
@@ -108,7 +122,6 @@ export default function EmployeeImporter() {
             },
           ]}
           onDataColumnsMapped={(dataColumns) => {
-            console.log(dataColumns);
             return dataColumns;
           }}
           onComplete={onComplete}

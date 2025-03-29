@@ -16,26 +16,35 @@ const App = () => {
 
       <div className="mb-16">
         <div className="content">
-          <h3 className="rubik text-4xl font-bold">
-            Building a CSV uploader is hard
-          </h3>
-          <p>
-            {`HelloCSV is a javascript library that makes it easy to drop in a
-            powerful, intuitive, and elegant CSV uploader. It's just ~130KB
-            gzipped, and works with any javascript application.`}
-          </p>
+          <a id="introduction"></a>
+          <div className="documentation-container">
+            <h3 className="font-title">
+              Building a CSV uploader is hard
+            </h3>
+            <p className="text-lg">
+              HelloCSV is a javascript library that makes it easy to drop in a
+              powerful, intuitive, and elegant CSV uploader that works with any
+              javascript application. <b>No React required.</b>
+            </p>
+          </div>
         </div>
 
         <div className="content">
-          <CodeBlock
-            title="Drop in an uploader into your app in seconds"
-            code={EXAMPLE_CODE}
-          />
+          <a id="getting-started"></a>
+          <div className="documentation-container">
+            <h3 className="font-title">
+              Drop in an uploader into your app in seconds
+            </h3>
+            <p>
+              
+            </p>
+          </div>
+
+          <CodeBlock code={EXAMPLE_CODE} />
         </div>
 
         <EmployeeImporter />
         <EmployeeSheetImporter />
-        <WideImporter />
       </div>
 
       <Footer />

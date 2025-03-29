@@ -7,18 +7,18 @@ import rainbow from '../assets/images/rainbow.jpg';
 export default function Header() {
   return (
     <div
-      className="bg-cover bg-center text-white"
+      className="bg-cover bg-center text-white clip-diagonal"
       style={{
         backgroundImage: `url(${rainbow})`,
-        overflow: 'hidden',
-        clipPath: 'polygon(0 0, 100% 0%, 115% 85%, 0 100%)',
       }}
     >
       <div className="relative bg-gradient-to-b from-[rgba(0,0,0,0.25)] to-[rgba(0,0,0,0)] py-4 font-semibold text-white">
         <div className="mx-auto mt-4 flex max-w-6xl flex-row justify-between px-4">
           <div className="rubik flex flex-row items-center gap-2">
             <TableCellsIcon className="size-6" />
-            HelloCSV
+            <span class="text-lg">
+              <span class="font-thin">Hello</span><span className="ml-[1px] font-semibold">CSV</span>
+            </span>
           </div>
           <a
             href="https://github.com/HelloCSV/HelloCSV"
