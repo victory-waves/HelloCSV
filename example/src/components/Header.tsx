@@ -29,7 +29,7 @@ export default function Header() {
           </a>
         </div>
       </div>
-      <div className="mx-auto flex max-w-6xl flex-col px-4 pt-24 pb-32 lg:!flex-row">
+      <div className="ml-auto mr-0 flex max-w-none flex-col px-4 pt-24 pb-32 lg:!flex-row" style={{ marginLeft: 'max(16px, calc((100% - 72rem) / 2))' }}>
         <div>
           <div className="rubik mb-6 text-5xl font-bold tracking-tighter sm:text-7xl">
             A Sleek CSV Importer
@@ -87,7 +87,7 @@ export default function Header() {
         </div>
 
         <div className="mx-auto mt-8 flex cursor-pointer flex-col items-center justify-center rounded-[2rem] lg:mt-0">
-          <video className="lg:w-[600px] w-full rounded-lg" src="/demo.mp4" autoPlay muted loop />
+          <video className="w-[800px] rounded-lg" src="/demo.mp4" autoPlay muted loop />
         </div>
       </div>
     </div>
