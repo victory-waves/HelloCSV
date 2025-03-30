@@ -33,7 +33,7 @@ footer {
 }
 
 .documentation-container {
-	@apply m-auto px-8 text-gray-800 md:w-[650px] mb-12;
+	@apply m-auto lg:px-8 text-gray-800 md:w-[650px] mb-12;
 }
 
 @media (min-width: 1024px) {
