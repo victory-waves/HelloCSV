@@ -1,5 +1,4 @@
 import 'tippy.js/dist/tippy.css'; // optional for styling
-import { GitHubIcon } from './Icons';
 import rainbow from '../assets/images/rainbow.jpg';
 
 export default function Header() {
