@@ -34,16 +34,17 @@ export default function Header() {
             A Sleek CSV Importer
           </div>
           <div className="mb-6 text-lg/9">
-            ✓ Finally, a CSV importer that just works.
+            🎯 Finally, a CSV importer that just works.
             <br />
-            ✓ No more custom scripts to handle complex CSV files.
+            🔧 No more custom scripts to handle complex CSV files.
             <br />
-            {`✓ Drop it into any app, even if you don't use React.`}
+            {`📦 Drop it into any app, even if you don't use React.`}
             <br />
-            ✓ Beautiful, customizable UI, with sensible defaults.
+            ✨ Beautiful, customizable UI, with sensible defaults.
             <br />
-            ✓ Fully supports multiple languages for a seamless experience.
-            <br />✓ Only ~130KB gzipped.
+            🌎 Fully supports multiple languages for a seamless experience.
+            <br />
+            🚀 Only ~130KB gzipped.
           </div>
 
           <div className="flex">
