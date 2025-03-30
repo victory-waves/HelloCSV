@@ -23,7 +23,14 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <GitHubIcon className="size-8 hover:text-gray-300" />
+            <iframe 
+              src="https://ghbtns.com/github-btn.html?user=HelloCSV&repo=HelloCSV&type=star&count=true"
+              scrolling="0"
+              width="170"
+              height="30"
+              title="GitHub">
+            </iframe>
+
           </a>
         </div>
       </div>
@@ -47,12 +54,17 @@ export default function Header() {
 
           <div className="flex">
             {/* TODO: Once we get the modal working, we will have this open the importer in a modal */}
-            <button
+            <a
               type="button"
+              href="#basic-example"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#basic-example')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="text-md mr-3 cursor-pointer rounded-full px-4 py-2.5 font-semibold text-white ring-1 shadow-xs ring-gray-300 ring-inset hover:opacity-80"
             >
               Demo ❯
-            </button>
+            </a>
             <a
               className="text-md px-4 py-2.5"
               href="https://github.com/HelloCSV/HelloCSV"

@@ -38,6 +38,10 @@ const App = () => {
               powerful, intuitive, and elegant CSV uploader that works with any
               javascript application. <b>No React required.</b>
             </p>
+            <br />
+            <p>
+              The best part? It's <span className="underline decoration-blue-500 underline-offset-6 decoration-4">free and open source.</span>
+            </p>
           </div>
         </div>
 
