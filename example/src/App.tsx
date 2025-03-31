@@ -8,30 +8,39 @@ import {
   EmployeeImporter,
 } from './components/importers';
 import InstallTabs from './components/InstallTabs';
+import Section from './components/Section';
+import Content from './components/Content';
+import DocumentContainer from './components/DocumentContainer';
 
 export default function App() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <Header />
 
-      <div className="content">
-        <div className="documentation-container">
-          <h3 className="font-title">Installation</h3>
-          <p>
-            Works with any Javascript application,{' '}
-            <span className="font-semibold italic">
-              {"even if you don't use React."}
-            </span>
-          </p>
-        </div>
-        <InstallTabs />
-      </div>
+      <Section>
+        <Content>
+          <DocumentContainer>
+            <h3 className="mb-6 text-2xl font-bold lg:text-4xl">
+              Installation
+            </h3>
+            <p>
+              Works with any Javascript application,{' '}
+              <span className="font-semibold italic">
+                {"even if you don't use React."}
+              </span>
+            </p>
+          </DocumentContainer>
+          <InstallTabs />
+        </Content>
+      </Section>
 
-      <div className="mb-16">
-        <div className="content">
+      <Section className="bg-gray-100">
+        <Content>
           <a id="introduction"></a>
-          <div className="documentation-container">
-            <h3 className="font-title">Building a CSV uploader is hard</h3>
+          <DocumentContainer>
+            <h3 className="mb-6 text-2xl font-bold lg:text-4xl">
+              Building a CSV uploader is hard
+            </h3>
             <p className="text-lg">
               HelloCSV is a javascript library that makes it easy to drop in a
               powerful, intuitive, and elegant CSV uploader that works with any
@@ -44,27 +53,34 @@ export default function App() {
                 free and open source.
               </span>
             </p>
-          </div>
-        </div>
+          </DocumentContainer>
+        </Content>
+      </Section>
 
-        <div className="content">
+      <Section>
+        <Content>
           <a id="getting-started"></a>
-          <div className="documentation-container">
-            <h3 className="font-title">
+          <DocumentContainer>
+            <h3 className="mb-6 text-2xl font-bold lg:text-4xl">
               Drop in an uploader into your app in seconds
             </h3>
             <p>
               A simple, yet powerful Javascript API to fit your needs.
               Transform, validate, clean, and slice your data.
             </p>
-          </div>
+          </DocumentContainer>
 
           <CodeBlock code={EXAMPLE_CODE} />
-        </div>
+        </Content>
+      </Section>
 
+      <Section className="bg-gray-100">
         <EmployeeImporter />
+      </Section>
+
+      <Section>
         <EmployeeSheetImporter />
-      </div>
+      </Section>
 
       <Footer />
     </div>

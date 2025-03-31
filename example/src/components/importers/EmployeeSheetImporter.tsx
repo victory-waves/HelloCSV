@@ -4,6 +4,8 @@ import Importer, {
   SheetRow,
   ImporterState,
 } from 'hello-csv/peer';
+import Content from '../Content';
+import DocumentContainer from '../DocumentContainer';
 import example2 from '../../assets/datasets/example-2.csv?url';
 
 const COMPANY_SHEET: SheetDefinition = {
@@ -108,34 +110,35 @@ export default function StudentsImporter() {
   };
 
   return (
-    <div className="content">
+    <Content>
       <a id="multiple-sheets"></a>
-      <div className="documentation-container">
-        <h3 className="font-title">
-          Multiple Sheets
-        </h3>
+      <DocumentContainer>
+        <h3 className="mb-6 text-2xl font-bold lg:text-4xl">Multiple Sheets</h3>
         <div className="container leading-8">
+          <p>Sometimes, you need to upload multiple sheets at once.</p>
           <p>
-            Sometimes, you need to upload multiple sheets at once.
+            For example, imagine we want to upload both{' '}
+            <code className="rounded-md bg-gray-200 p-1">employees</code> and{' '}
+            <code className="rounded-md bg-gray-200 p-1">companies</code>.
           </p>
           <p>
-            For example, imagine we want to upload both <code className="bg-gray-200 p-1 rounded-md">employees</code> and <code className="bg-gray-200 p-1 rounded-md">companies</code>.
+            However, there is a{' '}
+            <span className="font-semibold">many-to-one</span> relationship
+            between employees and companies.
           </p>
           <p>
-            However, there is a <span className="font-semibold">many-to-one</span> relationship between employees and companies.
-          </p>
-          <p>
-            In this case, HelloCSV allows you to upload a single file, and parse it into two different sheets.
+            In this case, HelloCSV allows you to upload a single file, and parse
+            it into two different sheets.
           </p>
         </div>
-        <p className="mt-8 text-lg underline decoration-blue-500 underline-offset-6 decoration-4">
+        <p className="mt-8 text-lg underline decoration-blue-500 decoration-4 underline-offset-6">
           Try uploading{' '}
           <a className="text-blue-500 hover:text-blue-600" href={example2}>
             this file
           </a>
           .
         </p>
-      </div>
+      </DocumentContainer>
       <div className="mt-4 flex h-[800px] rounded-lg border border-gray-200 bg-white p-6 px-8">
         <Importer
           sheets={[EMPLOYEE_SHEET, COMPANY_SHEET]}
@@ -160,6 +163,6 @@ export default function StudentsImporter() {
           <h4>Check the console for the output!</h4>
         </div>
       )}
-    </div>
+    </Content>
   );
 }
