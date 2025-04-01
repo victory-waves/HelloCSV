@@ -48,7 +48,7 @@ export default function Header() {
             <br />
             🌎 Fully supports multiple languages for a seamless experience.
             <br />
-            🚀 Only ~130KB gzipped.
+            🚀 Only ~99KB gzipped.
           </div>
 
           <div className="flex">
