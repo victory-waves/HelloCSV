@@ -81,5 +81,30 @@
     "regex": "Cette valeur est invalide",
     "required": "Cette valeur est obligatoire",
     "unique": "Cette valeur n'est pas unique"
+  },
+  "importStatus": {
+    "success": "Importation réussie",
+    "importSuccessful": "Importation réussie",
+    "importSuccessfulWithErrors": "Importation réussie avec erreurs",
+    "successDescription": "{{count}} enregistrements ont été importés avec succès",
+    "successDescriptionWithStats": "{{recordsImported}} sur {{totalRecords}} enregistrements ont été importés avec succès",
+    "error": "Importation échouée",
+    "errorDescription": "Une erreur est survenue lors de l'importation. Veuillez réessayer",
+    "importDetails": "Détails de l'importation",
+    "importDetailsDescription": "Détails sur votre dernière importation",
+    "fileInformation": "Informations sur le fichier",
+    "dataEnteredManually": "Données saisies manuellement",
+    "original": "Original",
+    "processed": "Traité",
+    "downloadProcessedData": "Télécharger les données traitées",
+    "importResults": "Résultats de l'importation",
+    "totalRows": "{{totalRows}} enregistrements",
+    "status": "Statut",
+    "failed": "Échoué",
+    "dataImport": "Importation de données",
+    "statisticsSkipped": "{{skipped}} ignorés",
+    "statisticsFailed": "{{failed}} échoués",
+    "statisticsImported": "{{imported}} importés",
+    "continue": "Continuer"
   }
 }

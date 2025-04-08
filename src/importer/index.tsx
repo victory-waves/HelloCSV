@@ -3,7 +3,7 @@ import { useRef } from 'preact/hooks';
 
 import HeaderMapper from '../mapper/components/HeaderMapper';
 import SheetDataEditor from '../sheet/components/SheetDataEditor';
-import Completed from './components/Completed';
+import ImportStatus from '../status/components/ImportStatus';
 import { delay } from '../utils/timing';
 import { buildInitialState, reducer } from './reducer';
 import {
@@ -34,6 +34,7 @@ function ImporterBody({
   preventUploadOnValidationErrors,
   maxFileSizeInBytes = 20 * 1024 * 1024, // 20MB,
   customSuggestedMapper,
+  onSuccessRedirectUrl,
 }: ImporterDefinition) {
   const { t } = useTranslations();
 
@@ -50,6 +51,7 @@ function ImporterBody({
     parsedFile,
     validationErrors,
     importProgress,
+    importStatistics,
   } = state;
 
   useEffect(() => {
@@ -154,17 +156,23 @@ function ImporterBody({
         sheetData.map((d) => ({ ...d, rows: filterEmptyRows(d) }))
       );
 
-      await onComplete({ ...state, sheetData: data }, (progress) => {
-        dispatch({ type: 'PROGRESS', payload: { progress } });
+      const statistics = await onComplete(
+        { ...state, sheetData: data },
+        (progress) => {
+          dispatch({ type: 'PROGRESS', payload: { progress } });
+        }
+      );
+
+      await delay(400);
+      dispatch({ type: 'PROGRESS', payload: { progress: 100 } });
+      await delay(200);
+      dispatch({
+        type: 'COMPLETED',
+        payload: { importStatistics: statistics ?? undefined },
       });
     } catch (e) {
       dispatch({ type: 'FAILED' });
-      return;
     }
-    await delay(400);
-    dispatch({ type: 'PROGRESS', payload: { progress: 100 } });
-    await delay(200);
-    dispatch({ type: 'COMPLETED' });
   }
 
   function onBackToPreview() {
@@ -255,12 +263,16 @@ function ImporterBody({
         )}
 
         {(mode === 'submit' || mode === 'failed' || mode === 'completed') && (
-          <Completed
+          <ImportStatus
             mode={mode}
             progress={importProgress}
             onRetry={onSubmit}
             onBackToPreview={onBackToPreview}
             resetState={resetState}
+            sheetData={sheetData}
+            statistics={importStatistics}
+            rowFile={state.rowFile}
+            onSuccessRedirectUrl={onSuccessRedirectUrl}
           />
         )}
       </Root>
