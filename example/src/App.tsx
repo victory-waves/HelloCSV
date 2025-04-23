@@ -1,6 +1,4 @@
-import 'hello-csv/peer/index.css';
 import Header from './components/Header';
-import CodeBlock from './components/CodeBlock';
 import Footer from './components/Footer';
 import { EXAMPLE_CODE } from './constants';
 import {
@@ -11,6 +9,7 @@ import InstallTabs from './components/InstallTabs';
 import Section from './components/Section';
 import Content from './components/Content';
 import DocumentContainer from './components/DocumentContainer';
+import TryItYourself from './components/TryItYourself';
 
 export default function App() {
   return (
@@ -44,7 +43,8 @@ export default function App() {
             <p className="text-lg">
               HelloCSV is a javascript library that makes it easy to drop in a
               powerful, intuitive, and elegant CSV uploader that works with any
-              javascript application. <b>No React required.</b>
+              javascript application. <b>No React required.</b> (<a className="text-blue-500 underline" href="https://hellocsv.mintlify.app/common/get-started/usage#peer" target="_blank">But it works
+              with React too!</a>)
             </p>
             <br />
             <p>
@@ -68,9 +68,15 @@ export default function App() {
               A simple, yet powerful Javascript API to fit your needs.
               Transform, validate, clean, and slice your data.
             </p>
+            <p className="mt-8 font-bold text-blue-500 underline decoration-blue-500 decoration-4 underline-offset-6">
+              <a href="#try-it-yourself">
+                Try it yourself ❯
+              </a>
+            </p>
           </DocumentContainer>
 
-          <CodeBlock code={EXAMPLE_CODE} />
+          <a id="try-it-yourself"></a>
+          <TryItYourself code={EXAMPLE_CODE} />
         </Content>
       </Section>
 
