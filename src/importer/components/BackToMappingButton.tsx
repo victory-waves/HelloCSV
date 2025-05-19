@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useState } from 'react';
 import { Button, ConfirmationModal } from '../../components';
 import { useTranslations } from '../../i18';
 

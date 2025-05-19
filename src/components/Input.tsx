@@ -1,9 +1,4 @@
-import {
-  FormEvent,
-  forwardRef,
-  PropsWithoutRef,
-  ReactNode,
-} from 'preact/compat';
+import { FormEvent, forwardRef, PropsWithoutRef, ReactNode } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { ImporterOutputFieldType } from '../types';
 

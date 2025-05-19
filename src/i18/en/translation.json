@@ -37,7 +37,9 @@
     "dragAndDrop": "Drag and drop your file here",
     "maxFileSizeInBytes": "Limit {{size}}",
     "browseFiles": "Browse Files",
-    "enterManually": "Or just manually enter your data"
+    "enterManually": "Or just manually enter your data",
+    "expandOptional": "Show more",
+    "collapseOptional": "Show less"
   },
   "mapper": {
     "numberRowsImported": "{{count}} Rows Imported",

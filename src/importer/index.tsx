@@ -1,4 +1,5 @@
-import { useRef, useEffect } from 'preact/hooks';
+import { useRef, useEffect } from 'react';
+import { SheetDefinition, SheetColumnDefinition } from '../sheet/types';
 
 import HeaderMapper from '../mapper/components/HeaderMapper';
 import SheetDataEditor from '../sheet/components/SheetDataEditor';
@@ -23,12 +24,13 @@ import { Button, Root, Tooltip } from '../components';
 import { TranslationProvider, useTranslations } from '../i18';
 import BackToMappingButton from './components/BackToMappingButton';
 import { Uploader } from '../uploader';
+import { CONTACT_SHEET_DEFINITION } from '../constants';
 
 function ImporterBody({
   theme,
   onComplete,
   allowManualDataEntry,
-  sheets,
+  sheets = CONTACT_SHEET_DEFINITION,
   onDataColumnsMapped,
   preventUploadOnValidationErrors,
   maxFileSizeInBytes = 20 * 1024 * 1024, // 20MB,

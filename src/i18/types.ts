@@ -1,4 +1,4 @@
-import { ReactNode } from 'preact/compat';
+import { ReactNode } from 'react';
 
 type TranslationValue = string | { [key: string]: TranslationValue };
 export type Translations = Record<string, TranslationValue>;

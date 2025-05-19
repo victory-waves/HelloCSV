@@ -1,5 +1,4 @@
-import { ReactNode } from 'preact/compat';
-import { useEffect } from 'preact/hooks';
+import { ReactNode, useEffect } from 'react';
 import { ThemeVariant } from '../types';
 
 interface ThemeSetterProps {

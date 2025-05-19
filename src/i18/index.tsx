@@ -1,9 +1,7 @@
-import { createContext } from 'preact';
+import { createContext, useContext, ReactNode } from 'react';
 import enTranslation from './en/translation.json';
 import frTranslation from './fr/translation.json';
 import ptBRTranslation from './pt-BR/translation.json';
-import { useContext } from 'preact/hooks';
-import { ReactNode } from 'preact/compat';
 import {
   ArgumentsTypeHtml,
   ArgumentsTypeText,

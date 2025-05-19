@@ -6,6 +6,7 @@ import Importer, {
 } from 'hello-csv/preact';
 import Content from '../Content';
 import studentsAndSchoolsExample from '../../assets/datasets/students_and_schools.csv?url';
+import { CONTACT_SHEET_DEFINITION } from '../../../src/constants';
 
 const SCHOOLS_SHEET: SheetDefinition = {
   id: 'schools',
@@ -181,18 +182,8 @@ export default function ComplexImporter() {
 
       <div className="mt-4 flex h-[800px] rounded-lg border border-gray-200 bg-white p-6 px-8">
         <Importer
-          sheets={[STUDENTS_SHEET, SCHOOLS_SHEET]}
-          onDataColumnsMapped={(sheets) => {
-            const sheet = sheets.find((sheet) => sheet.sheetId === 'schools')!;
-            const seen = new Set();
-            sheet.rows = [...sheet.rows].filter((row: SheetRow) => {
-              // Remove duplicate names, don't validate yet...
-              const hasSeen = !seen.has(row.school_name);
-              seen.add(row.school_name);
-              return hasSeen;
-            });
-            return sheets;
-          }}
+          sheets={CONTACT_SHEET_DEFINITION}
+          onDataColumnsMapped={(sheets) => sheets}
           onComplete={onComplete}
         />
         {ready && (

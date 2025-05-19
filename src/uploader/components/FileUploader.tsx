@@ -1,4 +1,4 @@
-import { useRef, useState } from 'preact/hooks';
+import { useRef, useState } from 'react';
 import { Button, Card } from '../../components';
 import { CloudArrowUpIcon } from '@heroicons/react/24/outline';
 import { useTranslations } from '../../i18';
@@ -79,6 +79,7 @@ export default function FileUploader({
               <p
                 onClick={onEnterDataManually}
                 className="text-hello-csv-primary hover:text-hello-csv-primary cursor-pointer decoration-2 opacity-90 hover:underline focus:underline focus:outline-none"
+                key="manual-entry"
               >
                 {t('uploader.enterManually')}
               </p>

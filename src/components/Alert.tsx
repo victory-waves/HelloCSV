@@ -3,7 +3,7 @@ import {
   CheckCircleIcon,
   ExclamationTriangleIcon,
 } from '@heroicons/react/24/solid';
-import { ReactNode } from 'preact/compat';
+import { ReactNode } from 'react';
 
 type VariantType = 'info' | 'success' | 'error' | 'warning';
 

@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'preact/hooks';
+import { useCallback, useRef } from 'react';
 
 const LONG_PRESS_DELAY = 500;
 const LONG_PRESS_ALLOWED_MOVE_THRESHOLD = 10;

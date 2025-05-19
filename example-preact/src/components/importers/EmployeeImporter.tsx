@@ -3,6 +3,7 @@ import Importer, { ImporterState } from 'hello-csv/preact';
 import Content from '../Content';
 import DocumentContainer from '../DocumentContainer';
 import example1 from '../../assets/datasets/example-1.csv?url';
+import { CONTACT_SHEET_DEFINITION } from '../../../src/constants';
 
 export default function EmployeeImporter() {
   const [ready, setReady] = useState(false);
@@ -43,83 +44,7 @@ export default function EmployeeImporter() {
       <div className="mt-4 flex max-h-[800px] rounded-lg border border-gray-200 bg-white px-2 py-6 sm:px-8">
         <Importer
           maxFileSizeInBytes={10 * 1024 * 1024} // 10MB
-          sheets={[
-            {
-              id: 'employees',
-              label: 'Employees',
-              columns: [
-                {
-                  label: 'Employee ID',
-                  id: 'employee.id',
-                  type: 'number',
-                  validators: [
-                    { validate: 'required' },
-                    {
-                      validate: 'unique',
-                      error: 'This employee ID is not unique',
-                    },
-                    {
-                      validate: 'is_integer',
-                      error: 'This value must be a number',
-                    },
-                  ],
-                },
-                {
-                  label: 'Email',
-                  id: 'email',
-                  type: 'string',
-                  validators: [
-                    { validate: 'required' },
-                    { validate: 'unique', error: 'This email is not unique' },
-                    {
-                      validate: 'email',
-                      error: 'This email is not valid',
-                    },
-                  ],
-                },
-                {
-                  label: 'Phone Number',
-                  id: 'phone_number',
-                  type: 'string',
-                  validators: [
-                    { validate: 'required' },
-                    { validate: 'phone_number' },
-                  ],
-                },
-                {
-                  label: 'Address',
-                  id: 'address',
-                  type: 'string',
-                  validators: [{ validate: 'required' }],
-                },
-                { label: 'City', id: 'city', type: 'string' },
-                {
-                  label: 'State',
-                  id: 'state',
-                  type: 'string',
-                  transformers: [{ transformer: 'state_code' }],
-                },
-                {
-                  label: 'Zip Code',
-                  id: 'zip_code',
-                  type: 'string',
-                  validators: [
-                    { validate: 'required' },
-                    { validate: 'postal_code' },
-                  ],
-                },
-                {
-                  label: 'Full address',
-                  id: 'full_address',
-                  type: 'calculated',
-                  typeArguments: {
-                    getValue: (row) =>
-                      `${row.address}, ${row.city}, ${row.state} ${row.zip_code}`,
-                  },
-                },
-              ],
-            },
-          ]}
+          sheets={CONTACT_SHEET_DEFINITION}
           onDataColumnsMapped={(dataColumns) => {
             return dataColumns;
           }}

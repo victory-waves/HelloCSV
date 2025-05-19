@@ -11,8 +11,7 @@ import {
   CheckIcon,
 } from '@heroicons/react/20/solid';
 import { useTranslations } from '../i18';
-import { useState } from 'preact/hooks';
-import { ReactNode } from 'preact/compat';
+import { ReactNode, useState } from 'react';
 import { ImporterOutputFieldType } from '../types';
 
 export interface SelectOption<T> {
@@ -162,7 +161,7 @@ export default function Select<T>({
         <ComboboxOptions
           anchor="bottom"
           transition
-          className="absolute z-99 mt-1 max-h-60 w-[var(--input-width)] overflow-auto rounded-md bg-white py-1 text-base ring-1 shadow-lg ring-black/5 focus:outline-hidden data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm"
+          className="absolute z-99 mt-1 max-h-60 w-[var(--input-width)] overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-hidden data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm"
         >
           {hasNoOptions && (
             <ComboboxOption

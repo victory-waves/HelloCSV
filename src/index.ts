@@ -1,4 +1,5 @@
-import { render, h } from 'preact';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
 import Importer from './importer';
 export * from './types';
@@ -12,5 +13,5 @@ export function renderImporter(
   element: HTMLElement,
   props: ImporterDefinition
 ) {
-  render(h(Importer, props), element);
+  createRoot(element).render(React.createElement(Importer, props));
 }

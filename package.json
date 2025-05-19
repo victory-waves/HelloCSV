@@ -25,13 +25,9 @@
   "scripts": {
     "dev": "vite",
     "build:react": "tsc -b && vite build --mode react",
-    "build:preact": "tsc -b && vite build --mode preact",
-    "build:bundled": "tsc -b && vite build --mode bundled",
-    "build": "npm-run-all --parallel build:preact build:bundled build:react",
+    "build": "npm run build:react",
     "watch:react": "tsc -b && vite build --watch --mode react",
-    "watch:preact": "tsc -b && vite build --watch --mode preact",
-    "watch:bundled": "tsc -b && vite build --watch --mode bundled",
-    "watch": "npm-run-all --parallel watch:preact watch:bundled watch:react",
+    "watch": "npm run watch:react",
     "test": "vitest",
     "preview": "vite preview",
     "prepare": "tsc --emitDeclarationOnly",
@@ -43,34 +39,21 @@
     "format_check": "prettier --check \"src/**/*.tsx\" \"src/**/*.ts\""
   },
   "exports": {
+    ".": {
+      "import": "./dist/react/index.es.js",
+      "require": "./dist/react/index.cjs.js"
+    },
     "./react": {
       "import": "./dist/react/index.es.js",
-      "require": "./dist/react/index.cjs.js",
-      "types": "./dist/types/index.d.ts"
+      "require": "./dist/react/index.cjs.js"
     },
-    "./react/index.css": "./dist/react/hello-csv.css",
-    "./preact": {
-      "import": "./dist/preact/index.es.js",
-      "require": "./dist/preact/index.cjs.js",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./preact/index.css": "./dist/preact/hello-csv.css",
-    "./bundled": {
-      "import": "./dist/bundled/index.es.js",
-      "require": "./dist/bundled/index.cjs.js",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./bundled/index.css": "./dist/bundled/hello-csv.css"
+    "./react/index.css": "./dist/react/hello-csv.css"
   },
   "peerDependencies": {
-    "preact": "^10.25.4",
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
   },
   "peerDependenciesMeta": {
-    "preact": {
-      "optional": true
-    },
     "react": {
       "optional": true
     },
@@ -79,10 +62,11 @@
     }
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.10.1",
     "@tailwindcss/vite": "^4.0.4",
     "@types/dropzone": "^5.7.9",
     "@types/papaparse": "5.3.15",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
     "@typescript-eslint/eslint-plugin": "5.57.1",
     "@typescript-eslint/parser": "5.57.1",
     "@vitejs/plugin-react": "^4.4.1",
@@ -97,12 +81,11 @@
     "eslint-plugin-prettier": "5.2.1",
     "gh-pages": "^6.3.0",
     "npm-run-all": "^4.1.5",
-    "preact-render-to-string": "^6.5.13",
     "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.4",
     "typescript": "~5.7.2",
-    "vite": "^6.3.4",
+    "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.0",
     "vitest": "^3.0.5"
   },

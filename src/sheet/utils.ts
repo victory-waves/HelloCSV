@@ -9,7 +9,7 @@ import {
   SheetViewMode,
 } from '../types';
 import { DOWNLOADED_CSV_SEPARATOR } from '../constants';
-import { useMemo } from 'preact/hooks';
+import { useMemo } from 'react';
 
 export function extractReferenceColumnPossibleValues(
   columnDefinition: SheetColumnReferenceDefinition,

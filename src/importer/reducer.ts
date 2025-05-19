@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from 'preact/hooks';
+import { useReducer, useEffect } from 'react';
 import { applyTransformations } from '../transformers';
 import {
   CellChangedPayload,

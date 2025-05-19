@@ -1,5 +1,5 @@
 import { cva } from 'cva';
-import { ReactNode } from 'preact/compat';
+import { ReactNode } from 'react';
 
 type Variant = 'error' | 'info';
 

@@ -1,5 +1,5 @@
 import { cva } from 'cva';
-import { CSSProperties, ReactNode } from 'preact/compat';
+import { CSSProperties, ReactNode } from 'react';
 
 export type ButtonVariant =
   | 'primary'

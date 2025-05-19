@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'preact/hooks';
+import { useMemo, useState } from 'react';
 import { Button, Error } from '../../components';
 import { useTranslations } from '../../i18';
 import { ColumnMapping, ParsedFile, SheetDefinition } from '../../types';
@@ -59,7 +59,9 @@ export default function HeaderMapper({
               <div className="flex-1">{t('mapper.importedColumn')}</div>
               <div className="flex-1">{t('mapper.destinationColumn')}</div>
             </div>
-            <div className="flex-1 overflow-y-auto">
+            <div
+              className={`flex-1 ${csvHeaders.length > 8 ? 'max-h-none overflow-y-visible' : 'max-h-[400px] overflow-y-auto'}`}
+            >
               {csvHeaders.map((header, columnIndex) => {
                 const headerMapping =
                   currentMapping.find(

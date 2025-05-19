@@ -1,5 +1,4 @@
-import { ReactNode, forwardRef } from 'preact/compat';
-import { useEffect } from 'preact/hooks';
+import { ReactNode, forwardRef, useEffect } from 'react';
 import { HEALDESS_UI_PORTAL_ROOT_ID, ROOT_CLASS } from '../constants';
 
 interface Props {

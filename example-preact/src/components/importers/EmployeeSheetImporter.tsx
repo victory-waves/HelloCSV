@@ -7,6 +7,7 @@ import Importer, {
 import Content from '../Content';
 import DocumentContainer from '../DocumentContainer';
 import example2 from '../../assets/datasets/example-2.csv?url';
+import { CONTACT_SHEET_DEFINITION } from '../../../src/constants';
 
 const COMPANY_SHEET: SheetDefinition = {
   id: 'companies',
@@ -153,20 +154,8 @@ export default function StudentsImporter() {
       </DocumentContainer>
       <div className="mt-4 flex h-[800px] rounded-lg border border-gray-200 bg-white px-2 py-6 sm:px-8">
         <Importer
-          sheets={[EMPLOYEE_SHEET, COMPANY_SHEET]}
-          onDataColumnsMapped={(sheets) => {
-            const sheet = sheets.find(
-              (sheet) => sheet.sheetId === 'companies'
-            )!;
-            const seen = new Set();
-            sheet.rows = [...sheet.rows].filter((row: SheetRow) => {
-              // Remove duplicate names, don't validate yet...
-              const hasSeen = !seen.has(row.company);
-              seen.add(row.company);
-              return hasSeen;
-            });
-            return sheets;
-          }}
+          sheets={CONTACT_SHEET_DEFINITION}
+          onDataColumnsMapped={(sheets) => sheets}
           onComplete={onComplete}
           persistenceConfig={{
             enabled: true,

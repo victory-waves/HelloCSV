@@ -1,4 +1,4 @@
-import { ReactNode } from 'preact/compat';
+import { ReactNode } from 'react';
 import { XCircleIcon } from '@heroicons/react/24/outline';
 
 interface Props {
