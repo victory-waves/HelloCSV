@@ -1,9 +1,9 @@
 import { useState } from 'preact/hooks';
-import Importer, { ImporterState } from 'hello-csv/preact';
+import Importer, { ImporterState } from '@victory-waves/hello-csv/react';
 import Content from '../Content';
 import DocumentContainer from '../DocumentContainer';
 import example1 from '../../assets/datasets/example-1.csv?url';
-import { CONTACT_SHEET_DEFINITION } from '../../../src/constants';
+import { CONTACT_SHEET_DEFINITION } from '@victory-waves/hello-csv';
 
 export default function EmployeeImporter() {
   const [ready, setReady] = useState(false);
@@ -45,7 +45,7 @@ export default function EmployeeImporter() {
         <Importer
           maxFileSizeInBytes={10 * 1024 * 1024} // 10MB
           sheets={CONTACT_SHEET_DEFINITION}
-          onDataColumnsMapped={(dataColumns) => {
+          onDataColumnsMapped={(dataColumns: any) => {
             return dataColumns;
           }}
           onComplete={onComplete}

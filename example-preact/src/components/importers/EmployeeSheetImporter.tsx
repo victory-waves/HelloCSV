@@ -1,97 +1,12 @@
 import { useState } from 'preact/hooks';
 import Importer, {
   SheetDefinition,
-  SheetRow,
   ImporterState,
-} from 'hello-csv/preact';
+} from '@victory-waves/hello-csv/react';
 import Content from '../Content';
 import DocumentContainer from '../DocumentContainer';
 import example2 from '../../assets/datasets/example-2.csv?url';
-import { CONTACT_SHEET_DEFINITION } from '../../../src/constants';
-
-const COMPANY_SHEET: SheetDefinition = {
-  id: 'companies',
-  label: 'Companies',
-  columns: [
-    {
-      label: 'Company Name',
-      id: 'company',
-      type: 'string',
-      validators: [{ validate: 'required' }],
-    },
-    {
-      label: 'Industry',
-      id: 'industry',
-      type: 'enum',
-      typeArguments: {
-        values: [
-          { label: 'Healthcare', value: 'healthcare' },
-          { label: 'Construction', value: 'construction' },
-          { label: 'Environmental Services', value: 'environmental_services' },
-          { label: 'Education', value: 'education' },
-          { label: 'Technology', value: 'technology' },
-          { label: 'Finance', value: 'finance' },
-        ],
-      },
-      validators: [{ validate: 'required' }],
-    },
-  ],
-};
-
-const EMPLOYEE_SHEET: SheetDefinition = {
-  id: 'employees',
-  label: 'Employees',
-  columns: [
-    {
-      label: 'Employee ID',
-      id: 'employee_id',
-      type: 'string',
-      validators: [
-        { validate: 'required' },
-        { validate: 'unique', error: 'This employee ID is not unique' },
-      ],
-    },
-    {
-      label: 'Email',
-      id: 'email',
-      type: 'string',
-      validators: [
-        { validate: 'required' },
-        { validate: 'unique', error: 'This email is not unique' },
-        {
-          validate: 'regex_matches',
-          regex:
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-          error: 'This email is not valid',
-        },
-      ],
-    },
-    {
-      label: 'Phone Number',
-      id: 'phone',
-      type: 'string',
-      validators: [{ validate: 'required' }],
-    },
-    { label: 'City', id: 'city', type: 'string' },
-    {
-      label: 'State',
-      id: 'state',
-      type: 'string',
-      isReadOnly: true,
-      transformers: [{ transformer: 'state_code' }],
-    },
-    {
-      label: 'Company - Name',
-      id: 'company',
-      type: 'reference',
-      typeArguments: {
-        sheetId: 'companies',
-        sheetColumnId: 'company',
-      },
-      validators: [{ validate: 'required' }],
-    },
-  ],
-};
+import { CONTACT_SHEET_DEFINITION } from '@victory-waves/hello-csv';
 
 export default function StudentsImporter() {
   const [ready, setReady] = useState(false);
@@ -110,7 +25,7 @@ export default function StudentsImporter() {
     setReady(true);
 
     const totalRows = data.sheetData.reduce(
-      (acc, sheet) => acc + sheet.rows.length,
+      (acc: number, sheet: any) => acc + sheet.rows.length,
       0
     );
 
@@ -155,7 +70,7 @@ export default function StudentsImporter() {
       <div className="mt-4 flex h-[800px] rounded-lg border border-gray-200 bg-white px-2 py-6 sm:px-8">
         <Importer
           sheets={CONTACT_SHEET_DEFINITION}
-          onDataColumnsMapped={(sheets) => sheets}
+          onDataColumnsMapped={(sheets: any) => sheets}
           onComplete={onComplete}
           persistenceConfig={{
             enabled: true,
