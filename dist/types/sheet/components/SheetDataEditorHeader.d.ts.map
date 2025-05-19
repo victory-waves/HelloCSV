@@ -1,0 +1,1 @@
+{"version":3,"file":"SheetDataEditorHeader.d.ts","sourceRoot":"","sources":["../../../../src/sheet/components/SheetDataEditorHeader.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,qBAAqB,EAAE,MAAM,UAAU,CAAC;AAIjD,UAAU,KAAK;IACb,MAAM,EAAE,qBAAqB,CAAC;CAC/B;AAED,MAAM,CAAC,OAAO,UAAU,qBAAqB,CAAC,EAAE,MAAM,EAAE,EAAE,KAAK,2CAmB9D"}

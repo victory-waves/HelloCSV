@@ -1,0 +1,1 @@
+{"version":3,"file":"ThemeSetter.d.ts","sourceRoot":"","sources":["../../../src/theme/ThemeSetter.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAa,MAAM,OAAO,CAAC;AAC7C,OAAO,EAAE,YAAY,EAAE,MAAM,UAAU,CAAC;AAExC,UAAU,gBAAgB;IACxB,KAAK,CAAC,EAAE,YAAY,CAAC;IACrB,QAAQ,EAAE,SAAS,CAAC;CACrB;AAED,eAAO,MAAM,WAAW,EAAE,KAAK,CAAC,EAAE,CAAC,gBAAgB,CAWlD,CAAC"}
