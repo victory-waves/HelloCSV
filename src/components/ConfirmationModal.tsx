@@ -5,7 +5,7 @@ import {
   DialogTitle,
 } from '@headlessui/react';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
-import { ReactNode } from 'preact/compat';
+import { ReactNode } from 'react';
 import Button, { ButtonVariant } from './Button';
 import { useTranslations } from '../i18';
 

@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react';
-import { SheetDefinition, SheetColumnDefinition } from '../sheet/types';
 
 import HeaderMapper from '../mapper/components/HeaderMapper';
 import SheetDataEditor from '../sheet/components/SheetDataEditor';

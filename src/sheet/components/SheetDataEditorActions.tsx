@@ -141,7 +141,9 @@ export default function SheetDataEditorActions({
           value={searchPhrase}
           onChange={(v) => setSearchPhrase(v as string)}
           placeholder={t('sheet.search')}
-          iconBuilder={(props) => <MagnifyingGlassIcon {...props} />}
+          iconBuilder={({ className }) => (
+            <MagnifyingGlassIcon aria-hidden={true} className={className} />
+          )}
         />
 
         <Tooltip

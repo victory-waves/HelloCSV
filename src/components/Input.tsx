@@ -1,4 +1,4 @@
-import { FormEvent, forwardRef, PropsWithoutRef, ReactNode } from 'react';
+import { FormEvent, forwardRef, ReactNode } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { ImporterOutputFieldType } from '../types';
 
@@ -7,7 +7,7 @@ interface Props {
   onBlur?: (value: ImporterOutputFieldType) => void;
   onChange?: (value: ImporterOutputFieldType) => void;
   placeholder?: string;
-  iconBuilder?: (props: PropsWithoutRef<ReactNode>) => ReactNode;
+  iconBuilder?: (props: Record<string, string>) => ReactNode;
   classes?: string;
   clearable?: boolean;
   type?: 'text' | 'number';

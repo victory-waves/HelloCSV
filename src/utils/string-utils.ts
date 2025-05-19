@@ -18,6 +18,7 @@ export function formatPhonenumber(
   }
   // first strip number
   const p = stripPhonenumbers(raw);
+  if (!p) return '';
   return /^\d{10}$/.test(p)
     ? `(${p.slice(0, 3)}) ${p.slice(3, 6)}-${p.slice(6, 10)}`
     : p;

@@ -32,18 +32,18 @@ export default function FileUploader({
     }
   };
 
-  const handleFileSelect = (event: Event) => {
-    const input = event.target as HTMLInputElement;
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target as HTMLInputElement;
     if (input.files?.length) {
       validateAndSetFile(input.files[0], maxFileSizeInBytes);
     }
   };
 
-  const handleDrop = (event: DragEvent) => {
-    event.preventDefault();
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
     setIsDragging(false);
-    if (event.dataTransfer?.files.length) {
-      validateAndSetFile(event.dataTransfer.files[0], maxFileSizeInBytes);
+    if (e.dataTransfer?.files.length) {
+      validateAndSetFile(e.dataTransfer.files[0], maxFileSizeInBytes);
     }
   };
 

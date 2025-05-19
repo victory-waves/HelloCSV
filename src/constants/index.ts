@@ -1,4 +1,6 @@
 import { capitalize } from '../utils/string-utils';
+import { SheetColumnDefinition } from '../sheet/types';
+import { ImporterOutputFieldType } from '../importer/types';
 
 export const NUMBER_OF_EMPTY_ROWS_FOR_MANUAL_DATA_INPUT = 100;
 
@@ -17,7 +19,7 @@ export const HEALDESS_UI_PORTAL_ROOT_ID = 'headlessui-portal-root';
 
 export const ROOT_CLASS = 'hello-csv';
 
-export const contactFields = [
+export const contactFields: SheetColumnDefinition[] = [
   // Name fields
   {
     id: 'firstname',
@@ -32,8 +34,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
@@ -51,8 +54,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
@@ -84,8 +88,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'phone_number',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           const digits = value.replace(/\D/g, '');
           return digits.slice(-10);
         },
@@ -101,8 +105,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
       {
@@ -125,8 +130,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'phone_number',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           const digits = value.replace(/\D/g, '');
           return digits.slice(-10);
         },
@@ -145,8 +150,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
@@ -176,7 +182,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -194,8 +201,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
@@ -211,8 +219,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
       {
@@ -232,8 +241,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
@@ -291,14 +301,10 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'number',
-        transformFn: (value: string): number | undefined => {
-          if (!value) return undefined;
-          if (typeof value === 'number') return value;
-          if (typeof value === 'string') {
-            const num = parseInt(value.replace(/[^\d.]/g, ''));
-            return isNaN(num) ? undefined : num;
-          }
-          return undefined;
+        transformFn: (value: ImporterOutputFieldType): number => {
+          if (typeof value !== 'string') return 0;
+          const num = parseInt(value.replace(/[^\d.]/g, ''));
+          return isNaN(num) ? 0 : num;
         },
       },
     ],
@@ -320,14 +326,10 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'number',
-        transformFn: (value: string): number | undefined => {
-          if (!value) return undefined;
-          if (typeof value === 'number') return value;
-          if (typeof value === 'string') {
-            const num = parseInt(value.replace(/[^\d.]/g, ''));
-            return isNaN(num) ? undefined : num;
-          }
-          return undefined;
+        transformFn: (value: ImporterOutputFieldType): number => {
+          if (typeof value !== 'string') return 0;
+          const num = parseInt(value.replace(/[^\d.]/g, ''));
+          return isNaN(num) ? 0 : num;
         },
       },
     ],
@@ -360,14 +362,10 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'number',
-        transformFn: (value: string): number | undefined => {
-          if (!value) return undefined;
-          if (typeof value === 'number') return value;
-          if (typeof value === 'string') {
-            const num = parseInt(value.replace(/[^\d.]/g, ''));
-            return isNaN(num) ? undefined : num;
-          }
-          return undefined;
+        transformFn: (value: ImporterOutputFieldType): number => {
+          if (typeof value !== 'string') return 0;
+          const num = parseInt(value.replace(/[^\d.]/g, ''));
+          return isNaN(num) ? 0 : num;
         },
       },
     ],
@@ -392,14 +390,10 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'number',
-        transformFn: (value: string): number | undefined => {
-          if (!value) return undefined;
-          if (typeof value === 'number') return value;
-          if (typeof value === 'string') {
-            const num = parseInt(value.replace(/[^\d.]/g, ''));
-            return isNaN(num) ? undefined : num;
-          }
-          return undefined;
+        transformFn: (value: ImporterOutputFieldType): number => {
+          if (typeof value !== 'string') return 0;
+          const num = parseInt(value.replace(/[^\d.]/g, ''));
+          return isNaN(num) ? 0 : num;
         },
       },
     ],
@@ -418,14 +412,10 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'number',
-        transformFn: (value: string): number | undefined => {
-          if (!value) return undefined;
-          if (typeof value === 'number') return value;
-          if (typeof value === 'string') {
-            const num = parseInt(value.replace(/[^\d.]/g, ''));
-            return isNaN(num) ? undefined : num;
-          }
-          return undefined;
+        transformFn: (value: ImporterOutputFieldType): number => {
+          if (typeof value !== 'string') return 0;
+          const num = parseInt(value.replace(/[^\d.]/g, ''));
+          return isNaN(num) ? 0 : num;
         },
       },
     ],
@@ -449,8 +439,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
@@ -473,8 +464,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
@@ -490,8 +482,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -520,8 +512,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -539,8 +531,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -558,8 +550,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -577,8 +569,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -596,8 +588,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -615,8 +607,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -634,8 +626,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -653,8 +645,8 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'lower',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
           return value.toLowerCase();
         },
       },
@@ -672,9 +664,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
@@ -691,9 +683,9 @@ export const contactFields = [
       {
         transformer: 'custom',
         key: 'capitalize',
-        transformFn: (value: string) => {
-          if (!value) return undefined;
-          return capitalize(value);
+        transformFn: (value: ImporterOutputFieldType) => {
+          if (typeof value !== 'string') return '';
+          return capitalize(value) ?? '';
         },
       },
     ],
